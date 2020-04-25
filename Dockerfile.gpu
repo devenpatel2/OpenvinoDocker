@@ -1,0 +1,18 @@
+#https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_docker_linux.html
+FROM openvino_base
+USER root
+RUN usermod -aG video openvino
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ocl-icd-libopencl1 wget && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-gmmlib_20.1.1_amd64.deb && \
+    wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-igc-core_1.0.3771_amd64.deb && \
+    wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-igc-opencl_1.0.3771_amd64.deb && \
+    wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-opencl_20.15.16524_amd64.deb && \
+    wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-ocloc_20.15.16524_amd64.deb && \
+    wget -q https://github.com/intel/compute-runtime/releases/download/20.15.16524/intel-level-zero-gpu_0.8.16524_amd64.deb && \
+    dpkg -i ./*.deb && \
+    ldconfig && \
+    rm ./*
+
