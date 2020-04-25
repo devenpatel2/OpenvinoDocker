@@ -1,5 +1,5 @@
 # Openvino Docker 
-The repo has three docekr files, creating three docker in steps. This helps to create a base docker (Dockerfile), then a use it to add gpu-support (Dockerfile.gpu). Once this is done, we create a new docker (Docekrfile.cv) with additional requirements, like OpenCV. In this docker file, you can add additions requirements. This helps to keep things modular and managebale. 
+The repo has three docekr files, creating three docker in steps. This helps to create a base docker (Dockerfile), then a use it to add gpu-support (Dockerfile.gpu). Once this is done, we create a new docker (Docekrfile.cv) with additional requirements, like OpenCV. In this docker file, you can add additional requirements. This helps to keep things modular and managebale. 
 
 # Features
  - OpenVino development docker 
