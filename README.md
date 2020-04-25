@@ -22,7 +22,7 @@ The repo has three docekr files, creating three docker in steps. This helps to c
  ```bash
  docker run --rm --it \
         --device /dev/dri \
-        -v <path_to_repo>/.bashrc:/home/openvino/.bashrc \
+        -v <path_to_repo>/OpenvinoDocker/.bashrc:/home/openvino/.bashrc \
         --name openvino \
         openvino_cv /bin/bash
  ```
