@@ -29,8 +29,3 @@ The repo has three docekr files, creating three docker in steps. This helps to c
  
  # Issues 
   - samples are built but not available in home folder
-  - on runing the ```hello_query_device``` script, only **CPU** is visible. 
-  ```bash
-  cd $INSTALLDIR/deployment_tools/inference_engine/samples/python/hello_query_device
-  python3 hello_query_device.py
-  ```
