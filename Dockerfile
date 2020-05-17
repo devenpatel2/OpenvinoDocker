@@ -26,11 +26,20 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends ${DEPENDENCIES} && \
     rm -rf /var/lib/apt/lists/*
 #ARG DOWNLOAD_LINK=http://registrationcenter-download.intel.com/akdlm/irc_nas/13231/l_openvino_toolkit_p_2019.0.000.tgz
+ENV pattern="COMPONENTS=DEFAULTS"
+ENV replacement="COMPONENTS=intel-openvino-ie-sdk-ubuntu-bionic__x86_64; \
+                 intel-openvino-ie-rt-cpu-ubuntu-bionic__x86_64; \
+                 intel-openvino-ie-rt-gpu-ubuntu-bionic__x86_64; \
+                 intel-openvino-ie-rt-vpu-ubuntu-bionic__x86_64; \
+                 intel-openvino-ie-rt-hddl-ubuntu-bionic__x86_64; \
+                 intel-openvino-model-optimizer__x86_64;intel-openvino-opencv-lib-ubuntu-bionic__x86_64"
+
 COPY l_openvino_toolkit_p_2020.2.120.tgz /tmp
 WORKDIR /tmp
 RUN pip3 install setuptools wheel
 RUN tar -xzf ./*.tgz && \
     cd l_openvino_toolkit* && \
+    sed -i "s/$pattern/$replacement/" silent.cfg && \
     sed -i 's/decline/accept/g' silent.cfg && \
     ./install.sh -s silent.cfg --install_dir $INSTALL_DIR && \
     rm -rf /tmp/*
