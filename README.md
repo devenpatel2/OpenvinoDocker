@@ -26,6 +26,3 @@ The repo has three docekr files, creating three docker in steps. This helps to c
         --name openvino \
         openvino_cv /bin/bash
  ```
- 
- # Issues 
-  - samples are built but not available in home folder
