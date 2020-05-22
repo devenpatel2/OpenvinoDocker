@@ -13,7 +13,7 @@ The repo has three docekr files, creating three docker in steps. This helps to c
 
 ## Download pre-requisites 
  ## Openvino Toolkit
- Download the Openvino Toolkit by regstering from  [Openvino download](https://software.intel.com/en-us/openvino-toolkit/choose-download/) site. For this project I had download the *2020.2.120* version. If a newer is avaiable one can download that and make the necessary changes in the **Dockerfile** 
+ Download the Openvino Toolkit by regstering from  [Openvino download](https://software.intel.com/en-us/openvino-toolkit/choose-download/) site. For this project I had downloaded the *2020.2.120* version. If a newer is avaiable one can download that and make the necessary changes in the **Dockerfile** 
  
  # Build 
  To build the docker(s), run the ```build_docker.sh``` script. This will take some time. 
@@ -26,6 +26,3 @@ The repo has three docekr files, creating three docker in steps. This helps to c
         --name openvino \
         openvino_cv /bin/bash
  ```
- 
- # Issues 
-  - samples are built but not available in home folder
