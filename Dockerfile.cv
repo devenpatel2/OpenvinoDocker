@@ -1,13 +1,14 @@
-FROM openvino_gpu
+FROM openvino_base
 RUN apt update
 
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
-RUN apt-get -y install libopencv-dev
+RUN apt-get -y install libopencv-dev virtualenvwrapper
 
 RUN pip3 install ipython \
          pyyaml \
-         opencv-python 
+         opencv-python \
+         torch=1.4 
         
 # create user
 USER openvino 
