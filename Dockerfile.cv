@@ -3,10 +3,11 @@ USER root
 RUN apt update
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
-RUN apt-get -y install libopencv-dev virtualenvwrapper
+RUN apt-get -y install libopencv-dev 
 
 RUN pip3 install ipython \
          pyyaml \
+         virtualenvwrapper \
          opencv-python \
          torch==1.4 
         

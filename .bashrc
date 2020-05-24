@@ -139,4 +139,5 @@ ex ()
 }
 
 source $INSTALLDIR/bin/setupvars.sh
-
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
